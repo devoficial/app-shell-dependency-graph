@@ -18,7 +18,7 @@ const Graph: React.FC<{ data: AppData }> = ({ data }) =>
         if (!svgRef.current) return;
 
         const width = 1800;
-        const height = width;
+        const height = 2400;
 
         const svg = d3.select(svgRef.current)
             .attr("width", width)
@@ -34,11 +34,13 @@ const Graph: React.FC<{ data: AppData }> = ({ data }) =>
             }))
         });
 
+
         const tree = d3.cluster()
-        .size([height, width - width / 2])
-        // .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
+        .size([height, width - width / 2]);
+        // .separation((a, b) => (a.parent === b.parent ? 10 : 12) / a.depth);
 
         tree(root);
+
 
         const link = svg.selectAll(".link")
             .data(root.links())

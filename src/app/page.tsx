@@ -118,7 +118,7 @@ export default async function Home ()
   const release_metadata = await getDepsFromMfs();
 
   return (
-    <main className='my-5'>
+    <main className='my-5 h-screen w-screen'>
       <Graph data={release_metadata} />
     </main>
   )
