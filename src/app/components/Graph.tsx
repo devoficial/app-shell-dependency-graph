@@ -27,7 +27,7 @@ const Graph: React.FC<{ data: AppData }> = ({ data }) =>
             .attr("transform", "translate(180,0)")
 
         const root: any = d3.hierarchy({
-            name: "Dependencies",
+            name: "Packages",
             children: Object.entries(data).map(([dep, apps]) => ({
                 name: dep,
                 children: apps.map(app => ({ name: app }))
@@ -66,7 +66,7 @@ const Graph: React.FC<{ data: AppData }> = ({ data }) =>
             node.append("text")
             .attr("dy", ".31em")
             .attr("x", (d: any) => d.children ? -6 : 8) // Adjust x offset
-            .attr("y", 2) // Adjust y offset
+            // .attr("y) // Adjust y offset
             .attr("text-anchor", (d: any) => d.children ? "end" : "start")
             .text((d: any) => d.data.name)
             .style("font-size", "10px");
