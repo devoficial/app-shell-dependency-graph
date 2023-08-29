@@ -1,0 +1,16 @@
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1;
+    /* Adjust the stroke width */
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font-size: 12px;
+}
